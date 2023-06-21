@@ -136,10 +136,12 @@ function showInputBox(column) {
 
 // Hide Item Input Box
 function hideInputBox(column) {
-  addBtns[column].style.visibility = 'visible';
-  saveItemBtns[column].style.display = 'none';
-  addItemContainers[column].style.display = 'none';
-  addToColumn(column);
+  if (addItems[column].textContent.length > 0) {
+    addBtns[column].style.visibility = 'visible';
+    saveItemBtns[column].style.display = 'none';
+    addItemContainers[column].style.display = 'none';
+    addToColumn(column);
+  }
 }
 
 // Allows arrays to reflect Drag and Drop items
